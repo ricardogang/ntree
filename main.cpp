@@ -132,6 +132,7 @@ bool Arbol<T>::InsertarEnMonticulo(T dato) {
         n->agregarHijo(dato);
         exito= true ;
     }
+    //FALTA REUBICAR ESE NODO INSERTADO COMPARANDO CON SUS ANCESTROS
     return exito ;
 }
 
@@ -256,6 +257,7 @@ int main() {
     a->Insertar(5,11);
     a->Insertar(11,1);
     cout << a->Altura();
+
     //cout << a->BuscarPadre(7)->getDato();
 
 //    a->Eliminar(7);
@@ -276,7 +278,7 @@ int main() {
     m->InsertarEnMonticulo(3);
     m->InsertarEnMonticulo(2);
     m->InsertarEnMonticulo(17);
-    m->InsertarEnMonticulo(19);
+    m->InsertarEnMonticulo(23);
 
     return 0;
 }

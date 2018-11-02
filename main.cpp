@@ -132,7 +132,7 @@ bool Arbol<T>::InsertarEnMonticulo(T dato) {
         n->agregarHijo(dato);
         exito= true ;
     }
-    //FALTA REUBICAR ESE NODO INSERTADO COMPARANDO CON SUS ANCESTROS
+    //FALTA REUBICAR ESE NODO INSERTADO COMPARANDO CON SUS PADRES
     return exito ;
 }
 

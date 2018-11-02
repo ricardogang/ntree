@@ -248,8 +248,6 @@ int Arbol<T>::Altura(){
 }
 
 int main() {
-    // AmbienteFamiliar *h=new AmbienteFamiliar("Lab 107");
-
     Arbol<int> *a= new Arbol<int>() ;
 
     a->InsertarRaiz(23);
@@ -260,10 +258,10 @@ int main() {
     cout << a->Altura();
     //cout << a->BuscarPadre(7)->getDato();
 
-    /*a->Eliminar(7);
-    a->Eliminar(23);*/
+//    a->Eliminar(7);
+//    a->Eliminar(23);
 
-    // a->Insertar(8,4); //ESTÁ INCOMPLETO...
+    // a->Insertar(8,4);
 
     Arbol<string> *ab= new Arbol<string> ;
     ab->InsertarRaiz("hey");

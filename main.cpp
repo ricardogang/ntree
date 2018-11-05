@@ -132,9 +132,14 @@ bool Arbol<T>::InsertarEnMonticulo(T dato) {
         n->agregarHijo(dato);
         exito= true ;
     }
+    if (true)    {
+        ;
+    }
+
     //FALTA REUBICAR ESE NODO INSERTADO COMPARANDO CON SUS PADRES
     return exito ;
 }
+
 
 template <class T>
 NodoArbol<T>* Arbol<T>::HojaMasIzquierda(NodoArbol<T>* n){

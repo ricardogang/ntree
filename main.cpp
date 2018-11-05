@@ -68,6 +68,8 @@ public:
         hijos= nullptr ;
     }
 
+    void setDato(T d){ this->dato = d;}
+
     T getDato() { return dato ; }
 
     void agregarHijo(T dato){
@@ -108,6 +110,7 @@ public:
     void Eliminar(T d) ;
     NodoArbol<T>* BuscarPadre(NodoArbol<T> *n,T d) ;
     NodoArbol<T>* BuscarPadre(T d) { return BuscarPadre(raiz, d);}
+    void Reacomodar(NodoArbol<T> *n);
 
 };
 //ARBOL.CPP//////////////////////////////////////////////////////////////////
@@ -132,11 +135,10 @@ bool Arbol<T>::InsertarEnMonticulo(T dato) {
         n->agregarHijo(dato);
         exito= true ;
     }
-    if (true)    {
-        ;
-    }
 
-    //FALTA REUBICAR ESE NODO INSERTADO COMPARANDO CON SUS PADRES
+    if(exito){
+        Reacomodar(n);
+    }
     return exito ;
 }
 
@@ -251,6 +253,24 @@ int Arbol<T>::AlturaRecursivo(NodoArbol<T> *n){
 template <class T>
 int Arbol<T>::Altura(){
     return AlturaRecursivo(raiz);
+}
+
+//contribuido por: Marco
+template <class T>
+void Arbol<T>::Reacomodar(NodoArbol<T> *n){
+    bool exito = false;
+    if(n!=nullptr){
+        if(BuscarPadre(n->getDato())->getDato() > n->getDato()){
+            T datoTemporal = n->getDato();
+            n->setDato(BuscarPadre(n->getDato())->getDato());
+            BuscarPadre(n->getDato())->setDato(datoTemporal);
+            exito = true;
+        }
+
+        if(exito){
+            Reacomodar(BuscarPadre(n->getDato()));
+        }
+    }
 }
 
 int main() {

@@ -130,8 +130,7 @@ bool Arbol<T>::InsertarEnMonticulo(T dato) {
     NodoArbol<T> *n= BuscarEspacio(raiz) ;
     if (n==nullptr){
         n= HojaMasIzquierda(raiz);
-    }
-    if (n!=nullptr) {
+    }else {
         n->agregarHijo(dato);
         exito= true ;
     }
